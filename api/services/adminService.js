@@ -231,13 +231,14 @@ export const postAchievement = async (achievement) => {
 }
 
 export const updateAchievement = async (achievement) => {
+    console.log(achievement)
     return await Achievement.update({
         name: achievement.name,
         description: achievement.description,
         type: achievement.type,
         criteria: achievement.criteria
     }, {
-        where: {achievement_id: achievement.achievement_id}
+        where: {achievement_id: achievement.id}
     });
 }
 
